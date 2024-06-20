@@ -6,6 +6,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { NavLink } from 'react-router-dom';
 
 const Layout = () => {
+  const logout = () => {
+    window.open("http://localhost:8003/logout", "_self")
+  }
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
@@ -28,7 +31,7 @@ const Layout = () => {
             </NavDropdown>
           </Nav>
           <Nav>
-          <Nav.Link as={NavLink} to="/login">Login</Nav.Link>
+            <Nav.Link as={NavLink} onClick={logout} to="/login">Login</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -14,6 +14,10 @@ const Login = () => {
 
     const formRef = useRef(null);
 
+    const loginwithgoogle = () => {
+        window.open("http://localhost:8003/api/auth/google", "_self")
+    }
+
     const handleSubmit = (e) => {
 
         e.preventDefault();
@@ -45,7 +49,7 @@ const Login = () => {
                     console.error("There was an error!", error);
                     setShowerror("Something went wrong");
                 });
-        }       
+        }
     };
 
     return (
@@ -140,6 +144,9 @@ const Login = () => {
                         Forgot password?
                     </Button>
                 </div>
+                <button className='login-with-google-btn' onClick={loginwithgoogle}>
+                    Sign In With Google
+                </button>
             </Form>
         </div>
     );
